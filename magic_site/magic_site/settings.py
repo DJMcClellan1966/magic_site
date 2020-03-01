@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'magic_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'websitedb',
+        'NAME': 'magicdb',
         'USER': 'postgres',
         'PASSWORD': 'padrep10',
         'HOST': 'localhost',
