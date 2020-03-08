@@ -1,5 +1,15 @@
 {% extends "homepage/base.html" %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<form class="" action="index.html" method="post">
+  <br>
+  <label for="question">Your question:</label>
+  <input id="question" type="text" name="question" value="{{ current_question }}">
+  <input type="submit" name="" value="OK">
+</form>
+{% else %}
+<p><h3>Please login to ask question</h3></p>
+{% endif %}
 
 {% endblock %}

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
     'tarot.apps.TarotConfig',
