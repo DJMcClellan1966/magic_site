@@ -1,15 +1,32 @@
-{% extends "homepage/base.html" %}
+{% extends "tarot/base_secure.html" %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<form class="" action="index.html" method="post">
-  <br>
-  <label for="question">Your question:</label>
-  <input id="question" type="text" name="question" value="{{ current_question }}">
-  <input type="submit" name="" value="OK">
-</form>
-{% else %}
-<p><h3>Please login to ask question</h3></p>
-{% endif %}
+
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+
+      <div class="col-md-4">
+        {% if user.is_authenticated %}
+        <p>Please focus and calm your mind and then ask</p>
+        <form enctype="multipart/form-data" action="{% url 'question' %}" method="post">
+          {% csrf_token %}
+
+          <label for="question">Your question:</label>
+          <input type="text" name="question">
+          <br>
+          <br>
+          <input type="submit" name="" value="Send to Ms Jen">
+        </form>
+        <hr>
+        {% else %}
+        <p> Please login or sign up to ask a question and receive a reading</p>
+        {% endif %}
+      </div>
+
+</div> <!-- /container -->
+
+
 
 {% endblock %}
