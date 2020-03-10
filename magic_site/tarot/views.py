@@ -5,8 +5,7 @@ from django.contrib import auth
 from django.utils import timezone
 from .models import Question
 
-def reading(request):
-    return render(request, 'tarot/reading.html')
+
 
 #@login_required(login_url = '/accounts/signup')
 def question(request):

@@ -5,7 +5,6 @@ from .import views
 urlpatterns = [
     path('question', views.question, name = 'question'),
     path('', views.index, name = 'index'),
-    path('', views.reading, name = 'reading'),
     path('your_questions', views.your_questions, name = 'your_questions'),
 
 
