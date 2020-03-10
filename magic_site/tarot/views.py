@@ -26,3 +26,8 @@ def question(request):
 
 def index(request):
         return render(request, 'tarot/index.html')
+
+@login_required
+def your_questions(request):
+    question = Question.objects.filter(seeker=request.user)
+    return render(request, 'tarot/your_questions.html', {'question':question})

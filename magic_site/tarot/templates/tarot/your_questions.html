@@ -1,0 +1,19 @@
+{% extends 'homepage/base.html' %}
+
+{% block content %}
+{% if error %}
+  {{ error }}
+  <br>
+  <br>
+  {% endif %}
+  <div clas="row">
+    <div class="col-md-4">
+{% for q in question.all %}
+<p> {{ q.question}}</p>
+<p> {{ q.pub_date }}</p>
+    </div>
+  </div>
+
+
+{% endfor %}
+{% endblock %}

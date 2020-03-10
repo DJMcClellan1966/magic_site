@@ -66,12 +66,30 @@
           </li>
           <li>
             {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'your_questions' %}">Your Questions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'question' %}">Ask a question</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Your Readings</a>
+            </li>
+        <li>
           <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
         </li>
           <form id="logout" method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
             <input type="hidden" />
           </form>
+
+          {% else %}
+          <li>
+          <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+        </li>
           {% endif %}
         </ul>
       </div>

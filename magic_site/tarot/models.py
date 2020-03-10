@@ -29,9 +29,6 @@ class Question(models.Model):
     seeker = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
-    def summary(self):
-        return self.question[:100]
-
     def __str__(self):
         return self.question
 
