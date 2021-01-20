@@ -80,12 +80,8 @@ WSGI_APPLICATION = 'magic_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tarot',
-        'USER': 'DJM',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'magicdb',
     }
 }
 
